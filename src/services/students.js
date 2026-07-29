@@ -45,6 +45,35 @@ const deleteStudent = async (id) => {
     console.log(data)
 }
 
-deleteStudent(9) // the id of what you want to delete
+// deleteStudent(9) // the id of what you want to delete
+
+let formData = { favoriteEmoji: "👋"}
+
+const UpdateStudent = async (id, updatedStudent) => {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+        method: 'PUT',
+        headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(updatedStudent),
+    }
+)
+const data = await res.json()
+console.log(data)
+
+}
+
+// UpdateStudent(7, formData)
+
+export {
+  index,
+  create,
+  deleteStudent,
+  UpdateStudent,
+}
+
+
+
+
 
 

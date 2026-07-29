@@ -13,11 +13,12 @@ const Count = () => {
     }
     handleClick()
 
-    }, []) 
+    }, [toggle]) 
     // [] you need this empty array so it runs one time
 
     const triggerUseEffect = () => {
-        setToggle(toggle ? false: true)
+        setToggle(toggle ? false: true) //my way
+        // setToggle(!toggle) //simpler way
         console.log(toggle);
         
     }

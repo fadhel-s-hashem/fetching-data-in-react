@@ -10,6 +10,7 @@ if(!res.ok) {
 
 console.log(data);
 // in terminal add the path (node src/services/students.js)
+return data
 }
 
 // index()

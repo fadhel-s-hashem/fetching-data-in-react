@@ -1,5 +1,7 @@
-const res = await fetch('https://student-names-api.onrender.com/students/')
+const res = await fetch('https://student-names-api.onrender.com/students')
+const data = await res.json()
 
-console.log(res)
-// in terminal add the path (src/services/students.js)
+console.log(data);
+// in terminal add the path (node src/services/students.js)
+
 

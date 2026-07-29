@@ -36,6 +36,15 @@ const create = async (newStudent)=>{
 
 // create()
 
+const deleteStudent = async (id) => {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+        method: 'DELETE',
+        
+    }) 
+    const data = await res.json()
+    console.log(data)
+}
 
+deleteStudent(9) // the id of what you want to delete
 
 

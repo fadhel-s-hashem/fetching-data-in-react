@@ -14,7 +14,7 @@ const Count = () => {
     handleClick()
 
     }, [toggle]) 
-    // [] you need this empty array so it runs one time
+    // [] you need this empty array (depency array) so it runs one time
 
     const triggerUseEffect = () => {
         setToggle(toggle ? false: true) //my way

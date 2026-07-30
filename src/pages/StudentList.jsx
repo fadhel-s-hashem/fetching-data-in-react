@@ -11,9 +11,7 @@ const StudentList = ({ students }) => {
                 {student.name}
                 </Link>
             </h3>
-                <p> emoji:{student.favoriteEmoji}</p>
-                <p> food:{student.favoriteFood}</p>
-                <br />
+                
             </>
         ))}
         </main>

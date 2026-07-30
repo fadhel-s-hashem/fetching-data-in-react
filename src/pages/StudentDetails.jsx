@@ -7,9 +7,19 @@ const StudentDetails = (props) => {
         return student.id === Number(studentId)
     })
 
+    if (props.isLoading){
+        return <p> loadinf student...</p>
+    }
+
+     if (!student) {
+        return <h2> student not found...</h2>
+     }
+
+
     return(
         <main>
-            <h3>hello {student.name}</h3> 
+            <br />
+            <h2>hello {student.name}</h2> 
             <p> favorite emoji:  {student.favoriteEmoji}</p>
                 <p> favorite food: {student.favoriteFood}</p>
 

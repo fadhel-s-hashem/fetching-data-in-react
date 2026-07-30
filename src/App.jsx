@@ -14,6 +14,7 @@ const App = () => {
   // use the state and map through the students
   
   const [students, setStudents] = useState([])
+  const [isLoading, setIsLoading] = useState(true) //this to solve some errors
 
   useEffect(() => {
 
@@ -24,6 +25,8 @@ const App = () => {
 
       } catch(error) {
         console.log(error)
+      } finally {
+        setIsLoading(false)
       }
        
     }
@@ -42,7 +45,9 @@ const App = () => {
   <Routes>
     <Route path='/' element={<h2> Welcome to the Students Directory</h2>}/>
     <Route path='/students' element={<StudentList students={students}/>}/>
-    <Route path='/students/:studentId' element={<StudentDetails students={students}/>}/>
+    <Route path='/students/:studentId' element={<StudentDetails students={students} isLoading={isLoading}/>}/>
+    <Route path='*' element={<h2>page not found</h2>}/>
+
   </Routes>
 
 

@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
+import * as studentService from './services/students'
 import './App.css'
 import Count from './pages/Count'
 import StudentList from './pages/StudentList'
 import NavBar from './components/NavBar'
-import * as studentService from './services/students'
 import StudentDetails from './pages/StudentDetails'
+import StudentForm from './pages/StudentForm'
 import { Route, Routes } from 'react-router'
 
 
@@ -35,6 +36,12 @@ const App = () => {
   
   }, [])
 
+  const addStudent = async (formData) => {
+    const newStudent = await studentService.create(formData)
+    setStudents([...students, newStudent])
+  }
+  // to create students to list :☝️
+
   return (
   <div>
 
@@ -46,6 +53,10 @@ const App = () => {
     <Route path='/' element={<h2> Welcome to the Students Directory</h2>}/>
     <Route path='/students' element={<StudentList students={students}/>}/>
     <Route path='/students/:studentId' element={<StudentDetails students={students} isLoading={isLoading}/>}/>
+    <Route
+          path="/students/new"
+          element={<StudentForm addStudent={addStudent} />}
+        />
     <Route path='*' element={<h2>page not found</h2>}/>
 
   </Routes>

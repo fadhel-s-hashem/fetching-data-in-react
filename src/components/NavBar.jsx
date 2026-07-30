@@ -5,7 +5,8 @@ const NavBar = () => {
         <nav>
             {/*in react must use link element instead <a href=""></a> */}
             <Link to='/'> Home</Link> {'|'}
-            <Link to="/students"> Students </Link>
+            <Link to="/students"> Students </Link> {'|'}
+            <Link to="/students/new">Add Student</Link>
         </nav>
 
     )

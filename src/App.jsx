@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import Count from './components/Count'
+import NavBar from './components/NavBar'
 import * as studentService from './services/students'
 
 
@@ -30,15 +31,18 @@ const App = () => {
 
   return (
   <div>
-  <h1>Fetching Data in React</h1>
+
+  <h1>Student directory </h1>
+
+  <NavBar/>
 
   {students.map(student => (
     <>
-  <p>{student.name}</p>
+  <p>{student.name}: {student.favoriteEmoji}</p>
+  <br />
   </>
 ))}
 
-    {/* <Count/> */}
     </div>
   )
 }

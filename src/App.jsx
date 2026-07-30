@@ -4,6 +4,7 @@ import Count from './pages/Count'
 import StudentList from './pages/StudentList'
 import NavBar from './components/NavBar'
 import * as studentService from './services/students'
+import { Route, Routes } from 'react-router'
 
 
 const App = () => {
@@ -36,7 +37,13 @@ const App = () => {
   <h1>Student directory </h1>
 
   <NavBar/>
-  <StudentList students={students}/>
+
+  <Routes>
+    <Route path='/' element={<h2> Welcome to the Students Directory</h2>}/>
+    <Route path='/students' element={<StudentList students={students}/>}/>
+  </Routes>
+
+  
 
 
     </div>

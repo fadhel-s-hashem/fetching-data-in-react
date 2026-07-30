@@ -1,10 +1,18 @@
+import { Link } from "react-router"
+
 const StudentList = ({ students }) => {
     return (
         <main>
 
         {students.map(student => (
             <>
-                <p>{student.name}: {student.favoriteEmoji}</p>
+            <h3>
+                <Link to={`/students/${student.id}`}>
+                {student.name}
+                </Link>
+            </h3>
+                <p> emoji:{student.favoriteEmoji}</p>
+                <p> food:{student.favoriteFood}</p>
                 <br />
             </>
         ))}

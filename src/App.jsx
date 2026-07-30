@@ -4,6 +4,7 @@ import Count from './pages/Count'
 import StudentList from './pages/StudentList'
 import NavBar from './components/NavBar'
 import * as studentService from './services/students'
+import StudentDetails from './pages/StudentDetails'
 import { Route, Routes } from 'react-router'
 
 
@@ -41,7 +42,9 @@ const App = () => {
   <Routes>
     <Route path='/' element={<h2> Welcome to the Students Directory</h2>}/>
     <Route path='/students' element={<StudentList students={students}/>}/>
+    <Route path='/students/:studentId' element={<StudentDetails students={students}/>}/>
   </Routes>
+
 
   
 

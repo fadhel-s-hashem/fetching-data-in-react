@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
+// to redicet to a page directly
 
 const initialState = {
   name: '',
@@ -11,6 +12,7 @@ const initialState = {
 
 const StudentForm = (props) => {
   const [formData, setFormData] = useState(initialState)
+  // to activate navigate
   const navigate = useNavigate()
 
   const handleChange = (event) => {
@@ -22,14 +24,18 @@ const StudentForm = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    // submit the form content to API ☝️
 
-    // try {
-    //   await props.addStudent(formData)
-    //   setFormData(initialState)
-    //   navigate('/students')
-    // } catch (error) {
-    //   console.log(error)
-    // }
+
+    try {
+      await props.addStudent(formData)
+      setFormData(initialState)
+      // to create and get what wrote in input as new value ☝️
+      // to use it 👇
+      navigate('/students')
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (

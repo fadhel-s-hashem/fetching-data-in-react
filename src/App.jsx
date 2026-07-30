@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import Count from './components/Count'
+import Count from './pages/Count'
+import StudentList from './pages/StudentList'
 import NavBar from './components/NavBar'
 import * as studentService from './services/students'
 
@@ -35,13 +36,8 @@ const App = () => {
   <h1>Student directory </h1>
 
   <NavBar/>
+  <StudentList students={students}/>
 
-  {students.map(student => (
-    <>
-  <p>{student.name}: {student.favoriteEmoji}</p>
-  <br />
-  </>
-))}
 
     </div>
   )

@@ -3,6 +3,8 @@ import { Link } from "react-router"
 const StudentList = ({ students }) => {
     return (
         <main>
+            <br />
+            <p>there are {students.length} student</p>
 
         {students.map(student => (
             <>

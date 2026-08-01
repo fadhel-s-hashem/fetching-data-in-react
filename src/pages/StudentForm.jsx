@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 // to redicet to a page directly
 
+
 const initialState = {
   name: '',
   favoriteFood: '',

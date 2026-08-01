@@ -7,6 +7,9 @@ import NavBar from './components/NavBar'
 import StudentDetails from './pages/StudentDetails'
 import StudentForm from './pages/StudentForm'
 import { Route, Routes } from 'react-router'
+import { Button, Card, Spin } from 'antd'
+
+
 
 
 const App = () => {
@@ -48,6 +51,8 @@ const App = () => {
   <h1>Student directory </h1>
 
   <NavBar/>
+  <Button type="primary">Ant Design is working</Button>
+
 
   <Routes>
     <Route path='/' element={<h2> Welcome to the Students Directory</h2>}/>

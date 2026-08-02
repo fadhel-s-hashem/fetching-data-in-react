@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import * as studentService from './services/students'
-import './App.css'
 import Count from './pages/Count'
 import StudentList from './pages/StudentList'
 import NavBar from './components/NavBar'
@@ -51,7 +50,7 @@ const App = () => {
   <h1>Student directory </h1>
 
   <NavBar/>
-  <Button type="primary">Ant Design is working</Button>
+ 
 
 
   <Routes>
